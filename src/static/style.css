@@ -1,0 +1,588 @@
+@font-face {
+  src: url("fonts/Acme-Regular.ttf");
+  font-family: aaa;
+}
+@font-face {
+  src: url("fonts/Montserrat-Regular.ttf");
+  font-family: Montserrat-regular;
+}
+
+@font-face {
+  src: url("fonts/PaytoneOne-Regular.ttf");
+  font-family: pay;
+}
+
+@font-face {
+  src: url("fonts/Righteous-Regular.ttf");
+  font-family: pay_2;
+}
+@font-face {
+  src: url("fonts/Lulo-Clean-W01-One-Bold.ttf");
+  font-family: lulo;
+}
+
+@font-face {
+  src: url("fonts/Montserrat-Light.ttf");
+  font-family: Montserrat;
+}
+
+@font-face {
+  src: url("fonts/Montserrat-Bold.ttf");
+  font-family: Montserrat-bold;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/edefe737-dc78-4aa3-ad03-3c6f908330ed.eot?#iefix")
+      format("eot"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/0078f486-8e52-42c0-ad81-3c8d3d43f48e.woff2")
+      format("woff2"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/908c4810-64db-4b46-bb8e-823eb41f68c0.woff")
+      format("woff"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/4577388c-510f-4366-addb-8b663bcc762a.ttf")
+      format("truetype"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/b0268c31-e450-4159-bfea-e0d20e2b5c0c.svg#b0268c31-e450-4159-bfea-e0d20e2b5c0c")
+      format("svg");
+}
+
+@font-face {
+  src: url("fonts/avera-lt.woff2");
+  font-family: Avenir-LT-W01_35-Light1475496;
+}
+
+@font-face {
+  font-family: "Lulo-Clean-W01-One-Bold";
+  src: url("fonts/aee74cb3-c913-4b54-9722-6001c92325f2.woff2");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: aaa;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.main_header {
+  height: 112px;
+  width: 100%;
+  background-color: #00242c;
+}
+
+.header_menu {
+  width: 100%;
+  height: 50px;
+  background-color: #47c99a;
+  text-align: center;
+  margin: auto;
+  float: left;
+}
+.header_menu ul li {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 17px;
+  color: black;
+  font-weight: bold;
+}
+.header_menu ul li a {
+  color: black;
+  text-decoration: none;
+}
+.header_menu ul li a:hover {
+  color: white;
+}
+.header_menu ul li:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+.mid {
+  height: 750px;
+  width: 100%;
+  background-image: url(images/studing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  overflow: hidden;
+}
+.blur {
+  background-color: rgba(88, 137, 129, 0.88);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 250px;
+}
+.one {
+  height: 40%;
+  width: 100%;
+}
+.one p {
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  padding-top: 240px;
+}
+.two {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+}
+.two p {
+  font-size: 40px;
+  font-weight: 580;
+  text-align: center;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.three p {
+  color: white;
+  padding-left: 180px;
+  font-size: 25px;
+  font-weight: 120;
+  padding-top: 20px;
+}
+#main_content {
+  padding: 60px 0;
+  background-color: #d8ece3;
+  margin-top: 50px;
+}
+#main_content_gray {
+  padding: 60px 0 30px 0;
+  background-color: #fafafa;
+}
+#announce {
+  padding: 60px 0;
+}
+/*foot start*/
+.foot {
+  height: 300px;
+  width: 100%;
+  background-color: #00242c;
+}
+.foot-one {
+  margin-left: 40%;
+}
+.foot-two {
+  width: 500px;
+  margin-left: 400px;
+}
+.copyright {
+  background-color: #00242c;
+  color: #fff;
+  text-align: center;
+  height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+}
+/*foot end*/
+/*login start*/
+.login {
+  height: 750px;
+  width: 100%;
+
+  background-image: url(images/02.-This-Is-Why-Students-Should-Not-Use-Laptops-For-Taking-Notes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.login-page {
+  height: 500px;
+  width: 35%;
+  background-color: #fff;
+  margin-top: 150px;
+  margin-left: 385px;
+  box-shadow: 0px 0px 11px -4px black;
+}
+.login-top {
+  height: 112px;
+  width: 100%;
+  background-color: #00242c;
+}
+.login-top img {
+  margin-left: 122px;
+}
+
+.form-group input[type="user"] {
+  padding: 21px 0px 21px 13px;
+  width: 233px;
+  border: 2px solid #c5eeee;
+  background-color: #c5eeee;
+  outline: none;
+  margin-left: -47px;
+  margin-bottom: 20px;
+}
+.form-group input[type="user"]:hover {
+  border: 2px solid #57ccc3;
+}
+.form-group input[type="password"] {
+  padding: 21px 0px 21px 13px;
+  width: 233px;
+  border: 2px solid #c5eeee;
+  background-color: #c5eeee;
+  outline: none;
+  margin-left: -47px;
+  margin-bottom: 20px;
+}
+.form-group input[type="password"]:hover {
+  border: 2px solid #57ccc3;
+}
+.checkbox {
+  margin-left: -43px;
+  font-weight: bold;
+  color: #42b58b;
+}
+.form-group input[type="login"] {
+  margin-left: -41px;
+  text-align: center;
+  background-color: #42b58b;
+}
+.form-group input[type="login"]:hover {
+  border: 2px solid #57ccc3;
+  background-color: white;
+  color: #00242c;
+}
+.text {
+  margin-left: -46px;
+
+  color: #57ccc3;
+}
+/*login end*/
+/*signin start*/
+.signin {
+  height: 750px;
+  width: 100%;
+
+  background-image: url(images/02.-This-Is-Why-Students-Should-Not-Use-Laptops-For-Taking-Notes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.signin-page {
+  height: 500px;
+  width: 75%;
+  background-color: #fff;
+  margin-top: 150px;
+  margin-left: 200px;
+  box-shadow: 0px 0px 11px -4px black;
+}
+.signin-top {
+  height: 112px;
+  width: 100%;
+  background-color: #00242c;
+}
+.signin-top img {
+  margin-left: 400px;
+}
+.signin-contact {
+  /* height: 250px; */
+  overflow: hidden;
+
+  position: relative;
+}
+.contact-left {
+  height: 300px;
+  width: 50%;
+  float: left;
+}
+.contact-left input {
+  display: block;
+  margin-bottom: 10px;
+}
+.contact-left input[type="text"] {
+  padding: 10px 150px 10px 14px;
+
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  border: none;
+  background-color: #c5eeee;
+}
+.contact-left input[type="email"] {
+  padding: 10px 150px 10px 14px;
+
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  border: none;
+  background-color: #c5eeee;
+}
+.contact-right {
+  height: 300px;
+  width: 50%;
+  float: left;
+}
+.contact-right input {
+  display: block;
+  margin-bottom: 10px;
+}
+.contact-right input[type="text"] {
+  padding: 10px 150px 10px 14px;
+
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  border: none;
+  background-color: #c5eeee;
+}
+.contact-right input[type="email"] {
+  padding: 10px 150px 10px 14px;
+
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  border: none;
+  background-color: #c5eeee;
+}
+.signin-checkbox {
+  margin-left: 75px;
+  font-weight: bold;
+  font-size: 25px;
+  color: #c5eeee;
+}
+.signin-form-group input[type="login"] {
+  margin-left: 390px;
+  text-align: center;
+  background-color: #42b58b;
+}
+.signin-form-group input[type="login"]:hover {
+  border: 2px solid #57ccc3;
+  background-color: white;
+  color: #00242c;
+}
+/*signin end*/
+
+/*about start*/
+
+.about {
+  height: 750px;
+  width: 100%;
+
+  background-image: url(images/online-teaching-Converted.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.about-main {
+  margin-top: 80px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+/*about end*/
+
+/*feedback start*/
+
+.feedback {
+  height: 600px;
+  width: 100%;
+  background-color: white;
+  margin-top: 50px;
+}
+.feedback-top {
+  float: right;
+}
+.form-control:hover {
+  background-color: #d8ece3;
+  border: none;
+}
+/*feedback end*/
+/*contact form start*/
+.contact-us {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-col {
+  flex-basis: 48%;
+  margin-bottom: 30px;
+  display: inline;
+}
+.contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.contact-col div .fas {
+  font-size: 28px;
+  color: navy;
+  margin: 10px;
+  margin-right: 30px;
+}
+.contact-col div p {
+  padding: 0;
+  color: #555;
+}
+.contact-col div h5 {
+  font-size: 20px;
+  margin-bottom: 1px;
+  color: #555;
+  font-weight: 400;
+}
+.contact-col input,
+.contact-col textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 17px;
+  outline: none;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-color: navy;
+}
+.buttonn {
+  color: oldlace;
+  width: 150px;
+  height: 50px;
+  background-color: navy;
+}
+/*contact form end*/
+
+/*
+body {
+    font-family: "Roboto Slab", serif;
+  }
+  .h1-tag {
+    text-align: center;
+    margin-top: 4%;
+  }
+  .fd-page {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .h3-tag {
+    text-align: center;
+    margin-bottom: 1%;
+  }
+  .Feedback input,
+  .Feedback textarea {
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-color: navy;
+    border-radius: 5px;
+  }
+  .button1 {
+    color: oldlace;
+    width: 150px;
+    height: 50px;
+    background-color: navy;
+  }
+  
+*/
+
+.say {
+  background-color: white;
+  height: 400px;
+  width: 100%;
+  /* margin: 38px auto;*/
+  position: relative;
+}
+.say_left {
+  height: 300px;
+  width: 30%;
+  position: absolute;
+
+  position: absolute;
+  top: 50px;
+  right: 900px;
+}
+.say_left img {
+  height: 300px;
+  width: 100%;
+}
+.say_right {
+  height: 300px;
+  width: 35%;
+  position: absolute;
+
+  position: absolute;
+  top: 50px;
+  right: 400px;
+}
+.say-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/*instructor start*/
+.container {
+  margin: 75px 0;
+}
+.container h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+  color: rgba(128, 2, 86, 0.699);
+  padding-bottom: 10px;
+}
+.container h1::after {
+  content: "";
+  background: #333;
+  display: block;
+  width: 200px;
+  height: 3px;
+  margin: 10px auto;
+}
+.profile {
+  margin: 25px;
+}
+.profile .img-box {
+  opacity: 1;
+  display: block;
+  position: relative;
+}
+.profile h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.profile h4 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/*instructor end*/
+
+/*details start*/
+.data {
+  height: 450px;
+  width: 100%;
+  background-color: white;
+  margin-top: 50px;
+}

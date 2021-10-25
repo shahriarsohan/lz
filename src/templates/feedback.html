@@ -1,0 +1,231 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- href="{% static 'css/main.css' %}" -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <link rel="icon" href="images/fabi.png" />
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+    <title>Learning Zone</title>
+  </head>
+  <body>
+    <!-- header start -->
+    <div class="container-fluid main_header m-0 p-0">
+      <input class="response-message" type="hidden" value="" />
+      <input class="response-type" type="hidden" value="" />
+      <input class="response-duration" type="hidden" value="5000" />
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <img src="{% static 'images/u.PNG' %}" class="img img-fluid" />
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid header_menu m-0 p-0">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="mobnav-btn"></div>
+          <ul class="sf-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/allcourses">All Courses</a></li>
+            <li><a href="/students">Our Students</a></li>
+            <li><a href="/feedback">Student's Feedback</a></li>
+
+            <li><a href="/instructors">Our Instructors</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contacts</a></li>
+            {% if user.is_authenticated %}
+            <li class="button"><a href="/accounts/logout">Log Out</a></li>
+            {% else %}
+            <li class="button"><a href="/accounts/login">Log In</a></li>
+            {% endif %}
+            <li class="button_left">
+              <a href="/user/registration">Sign Up</a>
+              <div class="mb"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- header end -->
+    <!--feedback start-->
+    <div class="feedback">
+      <div class="feedback-top">
+        <img src="{% static 'images/fd.jpg' %}" alt="" />
+      </div>
+      <div class="feedback-btn">
+        <div class="container">
+          <div class="row add_bottom_30">
+            <div class="col-md-12 text-center">
+              <center>
+                <form action="/Feedbacks/Index" method="get">
+                  <select
+                    name="Course"
+                    class="form-control"
+                    style="
+                      width: 75%;
+                      text-align-last: center;
+                      margin-top: 150px;
+                      background-color: white;
+                    "
+                    onchange="this.form.submit()"
+                  >
+                    <option value="">All Courses</option>
+                    <option value="935e14e9-9b1b-c628-d06c-08d8b89941dc">
+                      ReactJs - The Complete Guide
+                    </option>
+                    <option value="b4f3d093-2a7d-c08e-9f8d-08d7c299f10f">
+                      Competitive Programming - Beginner
+                    </option>
+                    <option value="4a527c4a-c352-c683-70e9-08d67c35c1b7">
+                      Competitive Programming - Advanced
+                    </option>
+                    <option value="6c85ae78-ea4e-cde2-e91d-08d6bd861563">
+                      Professional Programming with C#
+                    </option>
+                    <option value="46783653-06f8-c495-7661-08d546540608">
+                      UI and UX Design for APP and Website
+                    </option>
+                    <option value="d62899e3-d373-cc3c-f7b5-08d67a30ffe7">
+                      Competitive Programming - Intermediate
+                    </option>
+                    <option value="ded24efa-74db-cc79-893d-08d8297d18ac">
+                      Linux System Administration
+                    </option>
+                    <option value="2071c403-507e-c2f9-ff58-08d8bc67cc5c">
+                      Professional Cyber Security Career
+                    </option>
+                    <option value="c2b8d5e7-d1e5-c766-64c6-08d652825331">
+                      Full Stack Asp.net Core MVC Web Development
+                    </option>
+                    <option value="e3147cd0-dfdf-c7a0-99ad-08d787d54b38">
+                      Docker Essentials
+                    </option>
+                    <option value="34150988-11a7-c10a-7d5b-08d75db8baff">
+                      DevOps Fundamental Course
+                    </option>
+                    <option value="84daae02-0c6e-cb37-5eb7-08d6b52086bc">
+                      Complete Guide to Android &amp; IOS App Development with
+                      React Native
+                    </option>
+                    <option value="c0b09bb4-249f-cfcf-a8a0-08d77ec37129">
+                      Object Oriented Analysis &amp; Design
+                    </option>
+                    <option value="fa5216ff-2cc0-c6e3-3881-08d7825f5b7d">
+                      Become a Python Developer in 2020
+                    </option>
+                    <option value="6e248f81-06d6-ca66-71db-08d78de28572">
+                      Learn PHP Step by Step
+                    </option>
+                    <option value="f11e00f3-c1ef-ce20-1ae7-08d52e7664f1">
+                      Nitty-gritty of Data and Exploratory Analysis with Python
+                      3
+                    </option>
+                    <option value="af79f207-f955-c87e-e3c3-08d616c613bb">
+                      AWS Cloud Computing Fundamental
+                    </option>
+                  </select>
+                </form>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feedback-one"></div>
+      <div class="feedback-two"></div>
+      <div class="feedback-three"></div>
+      <div class="feedback-four"></div>
+      <div class="feedback-five"></div>
+    </div>
+    <!--feedback end-->
+    <!--footer start-->
+    <div class="container-fluid m-0 p-0">
+      <div class="row">
+        <div class="foot">
+          <div class="foot-one">
+            <img src="{% static 'images/u1.png' %}" alt="" />
+          </div>
+          <div class="foot-two">
+            <!--
+               <img style="width: 500px;"src="images/paywith.png" alt="">
+               -->
+            <img
+              style="width: 500px"
+              src="{% static 'images/AmarPay.png' %}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid m-0 p-0" style="background-color: #00242c">
+      <div class="row">
+        <div class="foot-col-1" style="color: white; margin-left: 200px">
+          <h4>Address</h4>
+          <ul>
+            <li>Road 4,</li>
+            <li>Zaman Medical Building</li>
+            <li>Mirpur-2, Dhaka-1216</li>
+            <li>Bangladesh</li>
+          </ul>
+        </div>
+        <!-- End col-md-4 -->
+        <div class="foot-col-2" style="color: white; margin-left: 100px">
+          <h4>About Learning -Zone</h4>
+          <ul>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="feedback.html">Students Feedback</a></li>
+            <li><a href="instructor.html">Our Instructor</a></li>
+            <li><a href="contract.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- End col-md-4 -->
+        <div class="foot-col-3" style="color: white; margin-left: 100px">
+          <h4>Follow Us</h4>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            </li>
+            <li>
+              <a href="http://www.youtube.com/" target="_blank">YouTube</a>
+            </li>
+            <li>
+              <a href="http://www.instragram.com/" target="_blank"
+                >Instragram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- End col-md-4 -->
+        <div class="foot-col-4" style="color: white; margin-left: 100px">
+          <h4>Contract Us</h4>
+          <ul>
+            <li>
+              <strong class="phone" style="font-family: 'Times New Roman'"
+                >+8801700000000</strong
+              ><br />
+
+              <small>Monday to Saturday,10AM to 8PM</small>
+            </li>
+            <li>Questions? <a href="#">info@learning zone.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">@Copyright 2021 -Learning Zone</p>
+
+    <!--footer end-->
+  </body>
+</html>
