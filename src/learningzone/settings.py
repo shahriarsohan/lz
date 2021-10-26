@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'contact',
     'feedback',
     'accounts',
+    'course',
 
 
     'allauth',
@@ -129,3 +130,8 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+
+MEDIA_DIR = BASE_DIR / 'media'
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
