@@ -1,4 +1,9 @@
+
+from django.contrib.auth import get_user_model
+
 from django.shortcuts import render
+
+User = get_user_model()
 
 
 def index(request):
@@ -22,4 +27,10 @@ def about(request):
 
 
 def students(request):
-    return render(request, 'students.html')
+    qs = User.objects.all()
+    print(qs)
+    context = {
+        'qs': qs
+    }
+
+    return render(request, 'students.html', context)

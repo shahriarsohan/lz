@@ -58,6 +58,26 @@
       </div>
     </div>
 
+    <section>
+      <div class="students-card">
+        <div class="container">
+          <div class="row">
+            {% for q in qs %}
+            <div class="col-md-3 col-sm-6">
+              <div class="card" style="width: 18rem">
+                <div class="card-body">
+                  <h5 class="card-title">{{q.fullname}}</h5>
+                  <p class="card-text">{{q.email}}</p>
+                  <p class="card-text">Member since {{q.date_joined|date}}</p>
+                  <a href="#" class="btn btn-primary">Courses</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- header end -->
     <!--footer start-->
     <div class="container-fluid m-0 p-0">

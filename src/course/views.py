@@ -14,6 +14,14 @@ def getCourses(request):
     return render(request, template, context)
 
 
+def allCourses(request):
+    template = 'all-courses.html'
+    courses = Courses.objects.all()
+    print(courses)
+    context = {"courses": courses}
+    return render(request, template, context)
+
+
 class CourseDetailView(DetailView):
     model = Courses
     template_name = 'details.html'

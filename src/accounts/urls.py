@@ -6,5 +6,5 @@ from .views import signup
 app_name = 'accounts'
 
 urlpatterns = [
-    path('registration', signup, name='user_sign_up')
+    path('registration', signup, name='user_sign_up'),
 ]

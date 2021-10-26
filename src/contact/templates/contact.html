@@ -121,17 +121,22 @@
       <div class="row">
         <div class="foot">
           <div class="foot-one">
-            <img src="images/u1.png" alt="" />
+            <img src="{% static 'images/u1.png' %}" alt="" />
           </div>
           <div class="foot-two">
             <!--
                <img style="width: 500px;"src="images/paywith.png" alt="">
                -->
-            <img style="width: 500px" src="images/AmarPay.png" alt="" />
+            <img
+              style="width: 500px"
+              src="{% static 'images/AmarPay.png' %}"
+              alt=""
+            />
           </div>
         </div>
       </div>
     </div>
+
     <div class="container-fluid m-0 p-0" style="background-color: #00242c">
       <div class="row">
         <div class="foot-col-1" style="color: white; margin-left: 200px">
@@ -186,9 +191,7 @@
         </div>
       </div>
     </div>
-
     <p class="copyright">@Copyright 2021 -Learning Zone</p>
-
     <!--footer end-->
   </body>
 </html>

@@ -12,7 +12,7 @@ urlpatterns = [
 
     # path('', index, name='home'),
     path('instructors', instructors),
-    path('allcourses', allcourses),
+    # path('allcourses', allcourses),
     path('feedback', feedback),
     path('about', about),
     path('students', students),

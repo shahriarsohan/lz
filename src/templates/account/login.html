@@ -36,17 +36,21 @@
         <div class="col-md-12">
           <div id="mobnav-btn"></div>
           <ul class="sf-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="all course.html">All Courses</a></li>
-            <li><a href="students.html">Our Students</a></li>
-            <li><a href="feedback.html">Student's Feedback</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/allcourses">All Courses</a></li>
+            <li><a href="/students">Our Students</a></li>
+            <li><a href="/feedback">Student's Feedback</a></li>
 
-            <li><a href="instructor.html">Our Instructors</a></li>
-            <li><a href="about us.html">About Us</a></li>
-            <li><a href="contract.html">Contacts</a></li>
-            <li class="button"><a href="login.html">Log In</a></li>
+            <li><a href="/instructors">Our Instructors</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contacts</a></li>
+            {% if user.is_authenticated %}
+            <li class="button"><a href="/accounts/logout">Log Out</a></li>
+            {% else %}
+            <li class="button"><a href="/accounts/login">Log In</a></li>
+            {% endif %}
             <li class="button_left">
-              <a href="signup.html">Sign Up</a>
+              <a href="/user/registration">Sign Up</a>
               <div class="mb"></div>
             </li>
           </ul>
