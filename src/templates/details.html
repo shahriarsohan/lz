@@ -2,22 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-    
-        <!-- href="{% static 'css/main.css' %}" -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
-        <link rel="icon" href="images/fabi.png" />
-        <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
-        <title>Learning Zone</title>
-      </head>
+        <title>details</title>
+    </head>
 <body>
     <!-- header start -->
 <div class="container-fluid main_header m-0 p-0">
@@ -32,26 +22,30 @@
 </div>
 <div class="container-fluid header_menu m-0 p-0">
     <div class="row">
-        <div class="col-md-12">
-            <div id="mobnav-btn"></div>
-            <ul class="sf-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="all course.html">All Courses</a></li>
-                <li><a href="students.html">Our Students</a></li>
-                <li><a href="feedback.html">Student's Feedback</a></li>
-               
-                <li><a href="instructor.html">Our Instructors</a></li>
-                <li><a href="about us.html">About Us</a></li>
-                <li><a href="contract.html">Contacts</a></li>
-                    <li class="button"><a href="login.html" >Log In</a></li>
-                    <li class="button_left">
-                        <a href="signup.html" >Sign Up</a>
-                        <div class="mb"></div>
-                    </li>
-            </ul>
-        </div>
+      <div class="col-md-12">
+        <div id="mobnav-btn"></div>
+        <ul class="sf-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/allcourses">All Courses</a></li>
+          <li><a href="/students">Our Students</a></li>
+          <li><a href="/feedback">Student's Feedback</a></li>
+
+          <li><a href="/instructors">Our Instructors</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contacts</a></li>
+          {% if user.is_authenticated %}
+          <li class="button"><a href="/accounts/logout">Log Out</a></li>
+          {% else %}
+          <li class="button"><a href="/accounts/login">Log In</a></li>
+          {% endif %}
+          <li class="button_left">
+            <a href="/user/registration">Sign Up</a>
+            <div class="mb"></div>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
+  </div>
 <!-- header end -->
     <!--data start-->
     <div class="container-fluid data m-0 p-0">
