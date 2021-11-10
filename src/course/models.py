@@ -1,8 +1,6 @@
 from django.db import models
 from django.urls import reverse
 
-# Create your models here.
-
 
 class Courses(models.Model):
     name = models.CharField(max_length=200, blank=True, null=True)
@@ -16,3 +14,18 @@ class Courses(models.Model):
 
     def get_absolute_url(self):
         return reverse('course:details', kwargs={'pk': self.pk})
+
+    def get_add_to_cart_url(self):
+        return reverse("cart:add-to-cart", kwargs={
+            'pk': self.pk
+        })
+
+    def get_course_details(self):
+        return reverse('user:course-details', kwargs={'pk': self.pk})
+
+
+class CourseContent(models.Model):
+    course = models.ForeignKey(Courses, on_delete=models.CASCADE)
+    caption = models.CharField(max_length=200, blank=True, null=True)
+    completed = models.BooleanField(default=False)
+    video = models.FileField(upload_to='video/%Y', blank=True, null=True)

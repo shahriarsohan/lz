@@ -9,7 +9,7 @@ def contact_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'success.html')
+            return render(request, 'success-contact.html')
     form = ContactForm()
     context = {'form': form}
     return render(request, 'contact.html', context)

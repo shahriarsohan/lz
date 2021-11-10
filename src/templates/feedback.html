@@ -69,9 +69,9 @@
           <div class="row add_bottom_30">
             <div class="col-md-12 text-center">
               <center>
-                <form action="/Feedbacks/Index" method="get">
+                <form action="/feedback/details" method="get">
                   <select
-                    name="Course"
+                    name="course"
                     class="form-control"
                     style="
                       width: 75%;
@@ -81,60 +81,9 @@
                     "
                     onchange="this.form.submit()"
                   >
-                    <option value="">All Courses</option>
-                    <option value="935e14e9-9b1b-c628-d06c-08d8b89941dc">
-                      ReactJs - The Complete Guide
-                    </option>
-                    <option value="b4f3d093-2a7d-c08e-9f8d-08d7c299f10f">
-                      Competitive Programming - Beginner
-                    </option>
-                    <option value="4a527c4a-c352-c683-70e9-08d67c35c1b7">
-                      Competitive Programming - Advanced
-                    </option>
-                    <option value="6c85ae78-ea4e-cde2-e91d-08d6bd861563">
-                      Professional Programming with C#
-                    </option>
-                    <option value="46783653-06f8-c495-7661-08d546540608">
-                      UI and UX Design for APP and Website
-                    </option>
-                    <option value="d62899e3-d373-cc3c-f7b5-08d67a30ffe7">
-                      Competitive Programming - Intermediate
-                    </option>
-                    <option value="ded24efa-74db-cc79-893d-08d8297d18ac">
-                      Linux System Administration
-                    </option>
-                    <option value="2071c403-507e-c2f9-ff58-08d8bc67cc5c">
-                      Professional Cyber Security Career
-                    </option>
-                    <option value="c2b8d5e7-d1e5-c766-64c6-08d652825331">
-                      Full Stack Asp.net Core MVC Web Development
-                    </option>
-                    <option value="e3147cd0-dfdf-c7a0-99ad-08d787d54b38">
-                      Docker Essentials
-                    </option>
-                    <option value="34150988-11a7-c10a-7d5b-08d75db8baff">
-                      DevOps Fundamental Course
-                    </option>
-                    <option value="84daae02-0c6e-cb37-5eb7-08d6b52086bc">
-                      Complete Guide to Android &amp; IOS App Development with
-                      React Native
-                    </option>
-                    <option value="c0b09bb4-249f-cfcf-a8a0-08d77ec37129">
-                      Object Oriented Analysis &amp; Design
-                    </option>
-                    <option value="fa5216ff-2cc0-c6e3-3881-08d7825f5b7d">
-                      Become a Python Developer in 2020
-                    </option>
-                    <option value="6e248f81-06d6-ca66-71db-08d78de28572">
-                      Learn PHP Step by Step
-                    </option>
-                    <option value="f11e00f3-c1ef-ce20-1ae7-08d52e7664f1">
-                      Nitty-gritty of Data and Exploratory Analysis with Python
-                      3
-                    </option>
-                    <option value="af79f207-f955-c87e-e3c3-08d616c613bb">
-                      AWS Cloud Computing Fundamental
-                    </option>
+                    {% for course in course_qs%}
+                    <option value="{{course.pk}}">{{ course.name }}</option>
+                    {% endfor %}
                   </select>
                 </form>
               </center>

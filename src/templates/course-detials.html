@@ -1,0 +1,182 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- href="{% static 'css/main.css' %}" -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <link rel="icon" href="images/fabi.png" />
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+    <title>Learning Zone</title>
+  </head>
+  <body>
+    <!-- header start -->
+    <div class="container-fluid main_header m-0 p-0">
+      <input class="response-message" type="hidden" value="" />
+      <input class="response-type" type="hidden" value="" />
+      <input class="response-duration" type="hidden" value="5000" />
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <img src="{% static 'images/u.PNG' %}" class="img img-fluid" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid header_menu m-0 p-0">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="mobnav-btn"></div>
+          <ul class="sf-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/allcourses">All Courses</a></li>
+            <li><a href="/students">Our Students</a></li>
+            <li><a href="/feedback">Student's Feedback</a></li>
+
+            <li><a href="/instructors">Our Instructors</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contacts</a></li>
+            {% if user.is_authenticated %}
+            <li class="button"><a href="/accounts/logout">Log Out</a></li>
+            {% else %}
+            <li class="button"><a href="/accounts/login">Log In</a></li>
+            {% endif %}
+            <li class="button_left">
+              <a href="/user/registration">Sign Up</a>
+              <div class="mb"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        {% for q in content %}
+        <div class="col-md-4 col-sm-12">
+          <div class="card" style="width: 18rem">
+            <div
+              id="trailer"
+              class="
+                section
+                d-flex
+                justify-content-center
+                embed-responsive embed-responsive-21by9
+              "
+            >
+              <video class="embed-responsive-item" controls loop>
+                <source
+                  src="http://127.0.0.1:8000/media/{{q.video}}"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-capitalize">{{q.caption}}</h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="row p-5">
+        <form action="{% url 'feedback:add' %}" method="POST">
+          {% csrf_token %}
+          <div class="review">Give feedback</div>
+          <div class="input-group">
+            <textarea
+              name="feedback"
+              class="form-control"
+              aria-label="With textarea"
+            ></textarea>
+            <input type="hidden" name="course_id" value="{{course.pk}}" />
+          </div>
+          <button type="submit" class="mt-2 btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container-fluid m-0 p-0">
+      <div class="row">
+        <div class="foot">
+          <div class="foot-one">
+            <img src="{% static 'images/u1.png' %}" alt="" />
+          </div>
+          <div class="foot-two">
+            <img
+              style="width: 500px"
+              src="{% static 'images/AmarPay.png' %}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid m-0 p-0" style="background-color: #00242c">
+      <div class="row">
+        <div class="foot-col-1" style="color: white; margin-left: 200px">
+          <h4>Address</h4>
+          <ul>
+            <li>Road 4,</li>
+            <li>Zaman Medical Building</li>
+            <li>Mirpur-2, Dhaka-1216</li>
+            <li>Bangladesh</li>
+          </ul>
+        </div>
+        <!-- End col-md-4 -->
+        <div class="foot-col-2" style="color: white; margin-left: 100px">
+          <h4>About Learning -Zone</h4>
+          <ul>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="feedback.html">Students Feedback</a></li>
+            <li><a href="instructor.html">Our Instructor</a></li>
+            <li><a href="contract.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- End col-md-4 -->
+        <div class="foot-col-3" style="color: white; margin-left: 100px">
+          <h4>Follow Us</h4>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            </li>
+            <li>
+              <a href="http://www.youtube.com/" target="_blank">YouTube</a>
+            </li>
+            <li>
+              <a href="http://www.instragram.com/" target="_blank"
+                >Instragram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- End col-md-4 -->
+        <div class="foot-col-4" style="color: white; margin-left: 100px">
+          <h4>Contract Us</h4>
+          <ul>
+            <li>
+              <strong class="phone" style="font-family: 'Times New Roman'"
+                >+8801700000000</strong
+              ><br />
+
+              <small>Monday to Saturday,10AM to 8PM</small>
+            </li>
+            <li>Questions? <a href="#">info@learning zone.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">@Copyright 2021 -Learning Zone</p>
+    <!--footer end-->
+  </body>
+</html>

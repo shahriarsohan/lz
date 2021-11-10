@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'feedback',
     'accounts',
     'course',
-
+    'cart',
+    'student',
 
     'allauth',
     'allauth.account',

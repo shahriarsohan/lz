@@ -13,12 +13,14 @@ urlpatterns = [
     # path('', index, name='home'),
     path('instructors', instructors),
     # path('allcourses', allcourses),
-    path('feedback', feedback),
+    path('feedback/', include('feedback.urls', namespace='feedback')),
     path('about', about),
     path('students', students),
 
 
     path('', include('course.urls', namespace='course')),
+    path('cart/', include('cart.urls', namespace='cart')),
+    path('user/', include('student.urls', namespace='user')),
 
     path('accounts/', include('allauth.urls')),
     path('user/', include('accounts.urls', namespace='accounts')),
