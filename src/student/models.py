@@ -18,6 +18,12 @@ class UserProfile(models.Model):
     email = models.EmailField(blank=True, null=True)
     courses = models.ManyToManyField(Courses, blank=True, null=True)
 
+    def __str__(self) -> str:
+        if self.f_name:
+            return self.f_name
+        else:
+            return self.user.username
+
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):

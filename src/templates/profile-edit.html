@@ -60,40 +60,41 @@
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="com-md-3">
-          <ul class="list-group">
-            <a href="/user/dashboard"
-              ><li class="list-group-item">Dashboard</li></a
-            >
-            <a href="/user/profile"><li class="list-group-item">Profile</li></a>
-            <a href="/user/dashboard"
-              ><li class="list-group-item">Courses</li></a
-            >
-          </ul>
+      <div class="row my-3 p-3">
+        <img
+          class="rounded-circle account-img"
+          src="{{ user.profile.avatar.url }} "
+          style="cursor: pointer"
+        />
+      </div>
+      {% if user_form.errors %}
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <div id="form_errors">
+          {% for key, value in user_form.errors.items %}
+          <strong>{{ value }}</strong>
+          {% endfor %}
         </div>
-        <div class="col-md-9">
-          <div class="row">
-            {% for q in course %}
-            <div class="col-md-6 col-sm-12">
-              <div class="card" style="width: 18rem">
-                <img
-                  class="card-img-top"
-                  src="{{q.thumbnail.url}}"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-capitalize">{{q.name}}</h5>
-                  <p class="card-text">{{q.description}}</p>
-                  <a href="{{q.get_course_details}}" class="btn btn-primary"
-                    >Start Learning</a
-                  >
-                </div>
-              </div>
-            </div>
-            {% endfor %}
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endif %}
+      <div class="form-content">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{ user_form }}
+          </fieldset>
+          <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 
@@ -173,30 +174,5 @@
     </div>
     <p class="copyright">@Copyright 2021 -Learning Zone</p>
     <!--footer end-->
-
-    <script>
-      function initFreshChat() {
-        window.fcWidget.init({
-          token: "bf29539e-a038-4b04-9260-d92905bfce8f",
-          host: "https://wchat.freshchat.com",
-        });
-      }
-      function initialize(i, t) {
-        var e;
-        i.getElementById(t)
-          ? initFreshChat()
-          : (((e = i.createElement("script")).id = t),
-            (e.async = !0),
-            (e.src = "https://wchat.freshchat.com/js/widget.js"),
-            (e.onload = initFreshChat),
-            i.head.appendChild(e));
-      }
-      function initiateCall() {
-        initialize(document, "Freshdesk Messaging-js-sdk");
-      }
-      window.addEventListener
-        ? window.addEventListener("load", initiateCall, !1)
-        : window.attachEvent("load", initiateCall, !1);
-    </script>
   </body>
 </html>

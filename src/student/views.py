@@ -1,11 +1,15 @@
 from django.conf import settings
+from django.db import models
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 from course.models import CourseContent, Courses
 from cart.models import Order
 from student.models import UserProfile
+
+from .forms import UpdateUserForm
 
 User = settings.AUTH_USER_MODEL
 
@@ -62,3 +66,25 @@ def detailscourse(request, pk):
         }
 
         return render(request, 'course-detials.html', context)
+
+
+@login_required
+def profile(request):
+    user_profile = user_profile = get_object_or_404(
+        UserProfile, user=request.user)
+
+
+@login_required
+def profileedit(request):
+    if request.method == 'POST':
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        user_form = UpdateUserForm(request.POST, initial={
+                                   'f_name': user_profile.f_name}, instance=user_profile)
+        user_form['f_name'].value()
+        if user_form.is_valid():
+            user_form.save()
+            return redirect(to='user:dashboard')
+    else:
+        user_form = UpdateUserForm(instance=request.user)
+
+    return render(request, 'profile-edit.html', {'user_form': user_form})

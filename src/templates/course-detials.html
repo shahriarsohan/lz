@@ -73,6 +73,18 @@
                 embed-responsive embed-responsive-21by9
               "
             >
+              <!-- {% if q.is_ppt %}
+              
+          
+              {% else %}
+
+             
+              {% endif %} -->
+              {% if q.is_ppt %}
+              <a target = "_blank" href="http://127.0.0.1:8000/media/{{q.video}}">
+                <button class = 'btn btn-primary'>Open Pdf</button>
+                </a
+              {% else %}
               <video class="embed-responsive-item" controls loop>
                 <source
                   src="http://127.0.0.1:8000/media/{{q.video}}"
@@ -80,13 +92,20 @@
                 />
                 Your browser does not support the video tag.
               </video>
+            
             </div>
+            {% endif %}
             <div class="card-body">
               <h5 class="card-title text-capitalize">{{q.caption}}</h5>
             </div>
           </div>
         </div>
         {% endfor %}
+        <!-- <p>
+          Open a PDF file
+          <a href="http://127.0.0.1:8000/media/video/2021/sample.pdf">example</a
+          >.
+        </p> -->
       </div>
       <div class="row p-5">
         <form action="{% url 'feedback:add' %}" method="POST">
@@ -178,5 +197,14 @@
     </div>
     <p class="copyright">@Copyright 2021 -Learning Zone</p>
     <!--footer end-->
+      <script>
+        function initFreshChat() {
+          window.fcWidget.init({
+            token: "bf29539e-a038-4b04-9260-d92905bfce8f",
+            host: "https://wchat.freshchat.com"
+          });
+        }
+        function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk Messaging-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+      </script>
   </body>
 </html>

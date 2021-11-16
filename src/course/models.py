@@ -27,5 +27,6 @@ class Courses(models.Model):
 class CourseContent(models.Model):
     course = models.ForeignKey(Courses, on_delete=models.CASCADE)
     caption = models.CharField(max_length=200, blank=True, null=True)
+    is_ppt = models.BooleanField(default=False)
     completed = models.BooleanField(default=False)
     video = models.FileField(upload_to='video/%Y', blank=True, null=True)
