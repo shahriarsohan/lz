@@ -136,5 +136,29 @@
     </div>
     <p class="copyright">@Copyright 2021 -Learning Zone</p>
     <!--footer end-->
+    <script>
+      function initFreshChat() {
+        window.fcWidget.init({
+          token: "9e9ad991-c361-466f-bdbe-5879925b9274",
+          host: "https://wchat.freshchat.com",
+        });
+      }
+      function initialize(i, t) {
+        var e;
+        i.getElementById(t)
+          ? initFreshChat()
+          : (((e = i.createElement("script")).id = t),
+            (e.async = !0),
+            (e.src = "https://wchat.freshchat.com/js/widget.js"),
+            (e.onload = initFreshChat),
+            i.head.appendChild(e));
+      }
+      function initiateCall() {
+        initialize(document, "Freshdesk Messaging-js-sdk");
+      }
+      window.addEventListener
+        ? window.addEventListener("load", initiateCall, !1)
+        : window.attachEvent("load", initiateCall, !1);
+    </script>
   </body>
 </html>
