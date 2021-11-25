@@ -5,17 +5,11 @@ from .forms import ContactForm
 
 
 def contact_view(request):
-    # if request.method == 'POST':
-    #     form = ContactForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         return render(request, 'success-contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'success-contact.html')
     form = ContactForm()
-    hghyg = {'form': form}
-    return render(request, 'contact.html', context=hghyg)
-
-# per ={
-#     name:'hctghgfhyjg'
-# }
-
-# per.name
+    context = {'form': form}
+    return render(request, 'contact.html', context)
